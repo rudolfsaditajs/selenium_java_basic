@@ -34,13 +34,17 @@ public class Sample2Task {
 
     @Test
     public void findElementByID() throws Exception {
+        System.out.println(driver.findElement(By.id("heading_2")).getText());
 //         TODO:
 //         get text "Heading 2 text" using id
+
     }
 
     @Test
     public void findElementByName() throws Exception {
 //         TODO:
+        System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("value"));
+        System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("id"));
 //         get attribute "id" and "value" of button "This is also a button" using name
     }
 
@@ -48,13 +52,22 @@ public class Sample2Task {
     public void findElementByClassFirst() throws Exception {
 //         TODO:
 //         get first text of class "test" (should be "Test Text 1")
+        System.out.println(driver.findElement(By.className("text")).get(0).getText());
     }
-
     @Test
     public void findElementByClassAll() throws Exception {
 //         TODO:
+        System.out.println(driver.findElements(By.id("test")).size());
 //         get size text of class "test" (should be 5)
 //         get text of class "test"
+        Iterable<? extends WebElement> allElementsWithClass;
+        for (WebElement elementWithClass : allElementsWithClass) {
+            System.out.println(elementWithClass.getText());
+           
+        }
 //         get third text of class "test" (should be "Test Text 4")
+        System.out.println(driver.findElement(By.className("text")).get(3).getText());
+
     }
+
 }
